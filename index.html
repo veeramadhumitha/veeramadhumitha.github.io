@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veeramadhumitha | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll(".section");
+      const options = { threshold: 0.1 };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, options);
+      sections.forEach(section => {
+        section.classList.add("fade-in");
+        observer.observe(section);
+      });
+    });
+  </script>
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Veeramadhumitha P</h1>
+    <p>Pre-final Year CSE Student | Flutter & Web Developer | AI Enthusiast</p>
+  </header>
+
+  <section class="section about">
+    <h2>About Me</h2>
+    <p>I’m a Computer Science student passionate about building real-world apps using Flutter, PHP, React, and AI. I love solving problems through technology and constantly learning new things.</p>
+  </section>
+
+  <section class="section skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="card">Flutter & Dart</div>
+      <div class="card">ReactJS</div>
+      <div class="card">Node.js & Express</div>
+      <div class="card">MongoDB & MySQL</div>
+      <div class="card">HTML, CSS, JS</div>
+    </div>
+  </section>
+
+  <section class="section projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Electroz</h3>
+        <p>Modern e-commerce website built with React, Bootstrap, and localStorage cart functionality.</p>
+        <a href="https://github.com/veeramadhumitha/electroz-store" target="_blank">View on GitHub</a>
+      </div>
+      <div class="card">
+        <h3>Resume Builder</h3>
+        <p>A web-based resume generator using PHP, with input forms and PDF export.</p>
+        <a href="https://github.com/veeramadhumitha/resume-builder-php" target="_blank">View on GitHub</a>
+      </div>
+      <div class="card">
+        <h3>VocaLink</h3>
+        <p>Voice-to-action Flutter app for calling, searching, camera access, and more using speech commands.</p>
+        <a href="https://github.com/veeramadhumitha/vocalink" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact">
+    <h2>Contact</h2>
+    <a href="mailto:veeramadhumitha@gmail.com">Email Me</a>
+    <a href="https://github.com/veeramadhumitha" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/YOUR-ID" target="_blank">LinkedIn</a>
+  </section>
+
+  <footer>
+    © 2025 Veeramadhumitha P — All rights reserved.
+  </footer>
+</body>
+</html>
